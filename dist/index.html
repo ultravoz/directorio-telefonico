@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="phonebook">
+<head>
+    <meta charset="UTF-8">
+    <title>Práctica 1</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script src="lib/angular-local-storage.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body ng-controller="bookctrl">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Edit panel</div>
+                    <div class="panel-body">
+                        <p>Add Contact</p>
+                        <form ng-submit="addContact()">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Name" ng-model="newContact.name">
+                            </div>
+                            <div class="form-group">
+                                <label for="surname">Surname</label>
+                                <input type="text" class="form-control" id="surname" placeholder="Surname" ng-model="newContact.surname">
+                            </div>
+                            <div class="form-group">
+                                <label for="telephone">Telephone number</label>
+                                <input type="text" class="form-control" id="telephone" placeholder="telephone" ng-model="newContact.telephone">
+                            </div>
+                            <button type="submit" class="btn btn-default">add contact</button>
+                        </form>
+
+                        <div class="tb-margin-top"></div>
+                        <p>Edit Contact</p>
+                        <form ng-submit="addContact()">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Name" ng-model="newContact.name">
+                            </div>
+                            <div class="form-group">
+                                <label for="surname">Surname</label>
+                                <input type="text" class="form-control" id="surname" placeholder="Surname" ng-model="newContact.surname">
+                            </div>
+                            <div class="form-group">
+                                <label for="telephone">Telephone number</label>
+                                <input type="text" class="form-control" id="telephone" placeholder="telephone" ng-model="newContact.telephone">
+                            </div>
+                            <button type="submit" class="btn btn-default">add contact</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Telephone book</div>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>#</th> <th>First Name</th> <th>Last Name</th> <th>Telephone</th> <th>Edit </th><th>Delete </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="contact in todo">
+                                <th scope="row">1</th>
+                                <td>{{contact.name}}</td>
+                                <td>{{contact.surname}}</td>
+                                <td>{{contact.telephone}}</td>
+                                <td><a href="#" ng-click="getContact($index)"><i class="fa fa-pencil"></i></a></td>
+                                <td><a href="#" ng-click="deleteContact($index)"><i class="fa fa-trash"></i></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-2.2.2.min.js"   integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI="   crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <script src="js/scripts.js" type="text/javascript"></script>
+</body>
+</html>
